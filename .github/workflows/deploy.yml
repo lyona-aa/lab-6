@@ -29,7 +29,7 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        - name: Проверить ошибки в коде
+      - name: Проверить ошибки в коде
         uses: github/super-linter@v5
         env:
           VALIDATE_HTML: true
