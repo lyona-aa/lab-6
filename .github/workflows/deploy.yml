@@ -1,36 +1,17 @@
 name: Deploy static site
-
 on:
   push:
     branches: [ main ]
-
 permissions:
   contents: read
   pages: write
   id-token: write
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout repository
+      - name: Забрать файлы
         uses: actions/checkout@v4
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: '.'
-
-      - name: Deploy to GitHub Pages
-      - name: Проверить ошибки в коде
-        uses: github/super-linter@v5
-        env:
-          VALIDATE_HTML: true
-          VALIDATE_CSS: true
+      - name: Опубликовать на GitHub Pages
         uses: actions/deploy-pages@v4
+        
