@@ -19,13 +19,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Validate HTML and CSS 
-        uses: github/super-linter@v5 
-        env: DEFAULT_BRANCH: main 
-        VALIDATE_HTML: true 
-        VALIDATE_CSS: true
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
+      
+      - name: Validate HTML and CSS
+        uses: github/super-linter@v5
+        env:
+          DEFAULT_BRANCH: main
+          VALIDATE_HTML: true   # Включаем проверку HTML
+          VALIDATE_CSS: true   # Включаем проверку CSS
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Для доступа к файлам
+
+      # Шаги для публикации сайта остаются без изменений
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
