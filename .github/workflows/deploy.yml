@@ -24,11 +24,10 @@ jobs:
         uses: github/super-linter@v5
         env:
           DEFAULT_BRANCH: main
-          VALIDATE_HTML: true   # Включаем проверку HTML
-          VALIDATE_CSS: true   # Включаем проверку CSS
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Для доступа к файлам
-
-      # Шаги для публикации сайта остаются без изменений
+          VALIDATE_HTML: true   
+          VALIDATE_CSS: true   
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
